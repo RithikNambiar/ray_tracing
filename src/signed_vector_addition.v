@@ -22,8 +22,8 @@ module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
   reg [19:0] x, y, z;       //20 bits to hold overflow
   
   /*
-  assign {x1[19:0], y1[19:0], z1[19:0] } = in_vector_1[56:0];
-  assign {x2[19:0], y2[19:0], z2[19:0] } = in_vector_2[56:0];
+  assign {x1[18:0], y1[18:0], z1[18:0] } = in_vector_1[56:0];
+  assign {x2[18:0], y2[18:0], z2[18:0] } = in_vector_2[56:0];
   */
 
   assign x1 = in_vector_1[56:38];   //    in_vector_1
