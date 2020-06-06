@@ -85,7 +85,8 @@ module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
         else //( x[19] == 0 && x[18] == 0)  
           begin
             
-          end*/
+          end
+      */
 
       end
 
@@ -141,7 +142,8 @@ module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
         else //( y[19] == 0 && y[18] == 0)  
           begin
             
-          end*/
+          end
+      */
 
       end      
        
@@ -196,7 +198,8 @@ module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
         else //( z[19] == 0 && z[18] == 0)  
           begin
             
-          end*/
+          end
+      */
 
       end         
        
