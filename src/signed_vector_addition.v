@@ -10,6 +10,7 @@
      VECTOR_WIDTH = 57
      Signed Fixed Point  = {Sign, Integer, Fraction}
      https://www.tutorialspoint.com/fixed-point-and-floating-point-number-representations
+     https://www.tutorialspoint.com/negative-binary-numbers
 */
 
 module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
@@ -107,7 +108,7 @@ module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
 
             if (y1[17:0] < y2[17:0])  y[19] =1;        //  sign bit
             else /* (y1[17:0] >= y2[17:0]) */  y[19] =0;
-          end
+          end  
 
         else if(y1[18] == 1 && y2[18] == 0)                          // 1  0
           begin
@@ -204,6 +205,6 @@ module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
       end         
        
        
-       assign out_vector[56:0] = { {x[19], x[17:0]}, {y[19], y[17:0]}, {z[19], z[17:0]} };   // {x, y, z}      //   pg  39
+  assign out_vector[56:0] = { {x[19], x[17:0]}, {y[19], y[17:0]}, {z[19], z[17:0]} };   // {x, y, z}      //   pg  39
   
 endmodule
