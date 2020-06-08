@@ -78,7 +78,7 @@ module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
             x[17:0] = {18{1'b1}};  //replication operator
           end
 
-      /*  else if( x[19] == 1 && x[18] == 0)
+    /*  else if( x[19] == 1 && x[18] == 0)
           begin
             x[17:0] = {18{1'b1}};  //replication operator
           end  
@@ -87,7 +87,7 @@ module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
           begin
             
           end
-      */
+    */
 
       end
 
@@ -135,7 +135,7 @@ module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
             y[17:0] = {18{1'b1}};  //replication operator
           end
 
-      /*  else if( y[19] == 1 && y[18] == 0)
+    /*  else if( y[19] == 1 && y[18] == 0)
           begin
             y[17:0] = {18{1'b1}};  //replication operator
           end  
@@ -144,7 +144,7 @@ module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
           begin
             
           end
-      */
+    */
 
       end      
        
@@ -191,7 +191,7 @@ module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
             z[17:0] = {18{1'b1}};  //replication operator
           end
 
-      /*  else if( z[19] == 1 && z[18] == 0)
+    /*  else if( z[19] == 1 && z[18] == 0)
           begin
             z[17:0] = {18{1'b1}};  //replication operator
           end  
@@ -200,7 +200,7 @@ module signed_vector_addition (in_vector_1, in_vector_2, out_vector);
           begin
             
           end
-      */
+    */
 
       end         
        
