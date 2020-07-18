@@ -72,9 +72,6 @@ module signed_vector_scalar_multiplication(in_scalar, in_vector, out_vector);
            
     end
 
-
-
-  //assign out_vector[56:0] = { {x[19], x[17:0]}, {y[19], y[17:0]}, {z[19], z[17:0]} };   // {x, y, z}      //   pg  40
   assign out_vector[56:0] = {  {out_x[37],out_x[27:10]} , {out_y[37],out_y[27:10]} , {out_z[37],out_z[27:10]}  };   // {x, y, z}    //   pg  40
 
 endmodule 
