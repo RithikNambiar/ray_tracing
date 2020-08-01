@@ -4,5 +4,5 @@ In the tb, the path of these files have been passed to the simulator as per the 
 While simulating it yourself, please change these path strings(file location) in the code to the location of those files on your computer.
 
 The same goes for the file location for the output file. All the results of the tb as performed on the input vector files are saved in the 
-directory called "sim_results". Make sure you change the path value of simulation output file in the tb code to the correct 
+directory called "sim_results". Make sure you change the path value of simulation output file in the testbench code to the correct 
 value(i.e, as per your requirements) before running the simulations.
