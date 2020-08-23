@@ -23,8 +23,8 @@ module signed_vector_scalar_multiplication(in_scalar, in_vector, out_vector);
   input  [56:0] in_vector;             //3*19 = 57 bit vector
   output [56:0] out_vector;            //3*19 = 57 bit vector
 
-  wire   [18:0] in_x, in_y, in_z;      //19 bits input
-  reg    [37:0] out_x, out_y, out_z;   //38 bits to hold 38 bit result of 19*19 bit product
+  wire   [18:0] in_x, in_y, in_z;      //19 bits input for the vector
+  reg    [36:0] out_x, out_y, out_z;   //37 bits to hold 38 bit result of 19*19 bit product(19yh bit is only sign bit)
   
   //   +------+----------+----------+------------+----------+
   //   |37  36|35      28|27      20|19        10|9        0|      //bit field for regs out_x, out_y and out_z    
@@ -58,9 +58,9 @@ module signed_vector_scalar_multiplication(in_scalar, in_vector, out_vector);
       // 1 : -ve
       //
       // both tables are same    
-      out_x[37] = in_scalar[18] ^ in_x[18];     //assigning sign bits for the resultant vector
-      out_y[37] = in_scalar[18] ^ in_y[18];     //valid for all cases, even for default min - max assignments
-      out_z[37] = in_scalar[18] ^ in_z[18];
+      out_x[36] = in_scalar[18] ^ in_x[18];     //assigning sign bits for the resultant vector
+      out_y[36] = in_scalar[18] ^ in_y[18];     //valid for all cases, even for default min - max assignments
+      out_z[36] = in_scalar[18] ^ in_z[18];
 
       //assigning default min & max values
       //Reduction operator. Logical-ORs all bits from 35 to 28  with each other. Result is one bit wide
@@ -72,6 +72,6 @@ module signed_vector_scalar_multiplication(in_scalar, in_vector, out_vector);
            
     end
 
-  assign out_vector[56:0] = {  {out_x[37],out_x[27:10]} , {out_y[37],out_y[27:10]} , {out_z[37],out_z[27:10]}  };   // {x, y, z}    //   pg  40
+  assign out_vector[56:0] = {  {out_x[36],out_x[27:10]} , {out_y[36],out_y[27:10]} , {out_z[36],out_z[27:10]}  };   // {x, y, z}    //   pg  40
 
 endmodule 
