@@ -30,7 +30,7 @@ module signed_vector_scalar_multiplication(in_scalar, in_vector, out_vector);
   //   |37  36|35      28|27      20|19        10|9        0|      //bit field for regs out_x, out_y and out_z    
   //   +------+----------+----------+------------+----------+ 
 
-  assign in_x = in_vector[56:38];   //  split in_vector into 3 components of 19 bits each
+  assign in_x = in_vector[56:38];   //split in_vector into 3 components of 19 bits each
   assign in_y = in_vector[37:19];
   assign in_z = in_vector[18:0];
 
@@ -68,10 +68,8 @@ module signed_vector_scalar_multiplication(in_scalar, in_vector, out_vector);
       out_x[27:10] = {|out_x[35:28]} ? {18{1'b1}} : out_x[27:10];  
       out_y[27:10] = {|out_y[35:28]} ? {18{1'b1}} : out_x[27:10];  //handles decimal overflows
       out_z[27:10] = {|out_z[35:28]} ? {18{1'b1}} : out_x[27:10];
-
-           
     end
 
-  assign out_vector[56:0] = {  {out_x[36],out_x[27:10]} , {out_y[36],out_y[27:10]} , {out_z[36],out_z[27:10]}  };   // {x, y, z}    //   pg  40
+  assign out_vector[56:0] = {  {out_x[36],out_x[27:10]} , {out_y[36],out_y[27:10]} , {out_z[36],out_z[27:10]}  };   //{x,y,z} //pg  40 //line 6
 
 endmodule 
