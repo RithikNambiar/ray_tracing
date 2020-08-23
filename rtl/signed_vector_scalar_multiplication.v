@@ -24,7 +24,7 @@ module signed_vector_scalar_multiplication(in_scalar, in_vector, out_vector);
   output [56:0] out_vector;            //3*19 = 57 bit vector
 
   wire   [18:0] in_x, in_y, in_z;      //19 bits input for the vector
-  reg    [36:0] out_x, out_y, out_z;   //37 bits to hold 38 bit result of 19*19 bit product(19yh bit is only sign bit)
+  reg    [36:0] out_x, out_y, out_z;   //37 bits to hold 37 bit result of 1 + (18*18) bit product(19yh bit is only sign bit)
   
   //   +------+----------+----------+------------+----------+
   //   |37  36|35      28|27      20|19        10|9        0|      //bit field for regs out_x, out_y and out_z    
