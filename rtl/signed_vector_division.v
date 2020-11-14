@@ -15,8 +15,8 @@
      https://www.lettercount.com/ 
      https://stackoverflow.com/questions/24580154/fixed-point-integer-division-fractional-division-algorithm 
      https://stackoverflow.com/questions/35433371/how-to-do-division-of-two-fixed-point-64-bits-variables-in-synthesizable-verilog 
-     PROCEDURE: The solution to this was to shift left dividend by 10 bits, perform the division, and take the
-                19 LSBs as the result, where 10 LSBs are the fractional part.
+     PROCEDURE: Left shift the dividend by 10 bits, perform the division, and take the 19 LSBs as the result,
+                where 10 LSBs are the fractional part.
 */
 
 module signed_vector_division(in_vector_1, in_vector_2, clk, out_vector);
@@ -25,6 +25,7 @@ module signed_vector_division(in_vector_1, in_vector_2, clk, out_vector);
 
   input clk;
   input  [56:0] in_vector_1, in_vector_2;
+
   output [56:0] out_vector;
 
   reg [18:0] reg_x1, reg_x2;
@@ -39,14 +40,14 @@ module signed_vector_division(in_vector_1, in_vector_2, clk, out_vector);
    
   reg [56:0] reg_out_vector;          //to hold resultant vector after concatenation of reg_x, reg_y & reg_z 
 
-  always @(/*negedge*/posedge clk)
+  always @(posedge clk)
     begin : SIGNED_VECTOR_DIVISION
       //SPLIT INPUT VECTORS
-      reg_x1[18:0] = in_vector_1[56:38];            //load x component into registers
+      reg_x1[18:0] = in_vector_1[56:38];            //load x component into temporary, internal wires
       reg_x2[18:0] = in_vector_2[56:38];
-      reg_y1[18:0] = in_vector_1[37:19];            //load y component into registers
+      reg_y1[18:0] = in_vector_1[37:19];            //load y component into temporary, internal wires
       reg_y2[18:0] = in_vector_2[37:19];
-      reg_z1[18:0] = in_vector_1[18:0];             //load z component into registers
+      reg_z1[18:0] = in_vector_1[18:0];             //load z component into temporary, internal wires
       reg_z2[18:0] = in_vector_2[18:0];
 
       //LEFT SHIFT DIVIDEND
