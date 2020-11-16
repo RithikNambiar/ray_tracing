@@ -6,7 +6,7 @@
   To reading a line at a time use $fgets                                        (!)
 */
 
-module tb_signed_vector_addition;
+module tb_signed_vector_division;
 
   parameter input_value_count = 101;   //set the number of values to be read as inputs from the input vector files
 
