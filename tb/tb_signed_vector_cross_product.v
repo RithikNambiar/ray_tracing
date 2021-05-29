@@ -3,7 +3,7 @@
   http://www.asic.co.in/Index_files/verilog_files/File_IO.htm
   http://www.asic-world.com/verilog/verilog2k3.html
   Works with Verilog 2001 only
-  To reading a line at a time use $fgets                                        (!)
+  To read a line at a time use $fgets                                        (!)
 */
 
 module tb_signed_vector_addition;
