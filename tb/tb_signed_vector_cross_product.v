@@ -28,8 +28,7 @@ signed_vector_cross_product dut_instance (.in_vector_1(in_vector_1), .in_vector_
 
 initial
   begin
-    //mcd_sim_results = $fopen("H:/eda-tool-projects/ray_tracing/sim_results/tb_signed_vector_addition_sim_results.txt");
-    mcd_sim_results = $fopen("C:/Users/rithi/Desktop/signed_vector_cross_product/tb_cross_product_v1_sim_results.txt");  
+    mcd_sim_results = $fopen("H:/eda-tool-projects/ray_tracing/sim_results/tb_signed_vector_cross_product_sim_results.txt");
 
     //when doing $readmemb, if there are any no.s apart from 1 & 0, all regs will be loaded with 'X'
     //after the occurence of that decimal no.
